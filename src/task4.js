@@ -9,8 +9,7 @@ class employee {
     this.salary = salary;
   }
 }
-
-function convert() {
+function show() {
   var ob1 = new employee(2265, "Saif", 20000);
   var ob2 = new employee(2266, "Abhishek", 20000);
   var ob3 = new employee(2267, "Kaif", 20000);
@@ -24,5 +23,18 @@ function convert() {
   employees.push(ob5);
 
   let text = JSON.stringify(employees);
-  document.getElementById("showRes").innerHTML = text;
+  var ob = JSON.parse(text);
+  let table = "<table border=1><tr><th>ID</th><th>Name</th><th>Salary</th></tr>";
+  ob.forEach((element) => {
+    table +=
+      "<tr><td>" +
+      element.id +
+      "</td><td>" +
+      element.name +
+      "</td><td>" +
+      element.salary +
+      "</td></tr>";
+  });
+  table += "</table>";
+  document.getElementById("showRes").innerHTML = table;
 }

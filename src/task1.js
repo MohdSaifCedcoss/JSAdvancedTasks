@@ -12,16 +12,16 @@ function addData() {
   display();
 }
 
-export function display() {
+function display() {
   let table =
-    "<table><tr><th>ID</th><th>Name</th><th>Salary</th><th>Action</th></tr>";
+    "<table border=1><tr><th>ID</th><th>Name</th><th>Salary</th><th>Action</th></tr>";
   employees.forEach((element) => {
     table +=
       '<tr><td>' +
       element.id +
       '</td><td>' +
       element.name +
-      '<td><td>' +
+      '</td><td>' +
       element.salary +
       '</td><td><button onclick="deleteData(\' '+element.id+'\')">Delete</button></td></tr>';
   });
@@ -32,9 +32,7 @@ export function display() {
 function deleteData(uid){
     uid=Number(uid);
     for(let i=0;i<employees.length;i++){
-        console.log(employees[i].id);
         if(employees[i].id==uid){
-            console.log("In if");
             employees.splice(i,1);
         }
     }
