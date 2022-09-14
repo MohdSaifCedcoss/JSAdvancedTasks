@@ -1,6 +1,15 @@
 let employees = [];
 function addData() {
+  document.getElementById("erroMsg").style.display = "none";
   let ID = document.getElementById("empId").value;
+  for (let i = 0; i < employees.length; i++) {
+    if (employees[i].id == ID) {
+      document.getElementById("erroMsg").style.display = "block";
+      document.getElementById("erroMsg").innerHTML =
+        "ID already exists Please check and re-enter ID";
+      return;
+    }
+  }
   let name = document.getElementById("empName").value;
   let sal = document.getElementById("empSalary").value;
   if (sal < 0 || sal == 0) {
@@ -47,6 +56,6 @@ function deleteData(uid) {
 
 debugFun = () => {
   debugger;
-  alert("Please Reresh the page and enter the salary greater than 0");
+  alert("Please enter the salary greater than 0");
   return;
 };
