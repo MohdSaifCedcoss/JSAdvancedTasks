@@ -1,6 +1,6 @@
 let employees = [];
 function addData() {
-    document.getElementById("erroMsg").style.display = "none";
+  document.getElementById("erroMsg").style.display = "none";
   let ID = document.getElementById("empId").value;
   for (let i = 0; i < employees.length; i++) {
     if (employees[i].id == ID) {
